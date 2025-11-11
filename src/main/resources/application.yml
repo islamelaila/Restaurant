@@ -1,0 +1,19 @@
+spring:
+  messages:
+    basename: i18n/messages
+  application:
+    name: Restaurant
+
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/ORCLPDP
+    username: nti
+    password: nti123
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#token:
+#  secret: idijcjkdkm8748987@#$%^&4568,GTYIUOUyqwqqcnmxzcnx777*&&$##@
+#  time: 24h
