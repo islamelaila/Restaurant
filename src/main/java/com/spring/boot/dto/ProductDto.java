@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.spring.boot.model.Category;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,10 +20,12 @@ public class ProductDto {
 
     private Long id;
 
+    @NotBlank(message = "Product should not be empty")
     private String name;
 
     private String imagePath;
 
+    @NotBlank(message = "description should not be empty")
     private String description;
 
     private Double price;

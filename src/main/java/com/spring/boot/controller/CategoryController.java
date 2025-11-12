@@ -1,6 +1,7 @@
 package com.spring.boot.controller;
 import com.spring.boot.dto.CategoryDto;
 import com.spring.boot.service.CategoryService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,12 +33,12 @@ public class CategoryController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<CategoryDto> saveCategory (@RequestBody CategoryDto categoryDto) throws URISyntaxException {
+    public ResponseEntity<CategoryDto> saveCategory (@RequestBody @Valid CategoryDto categoryDto) throws URISyntaxException {
         return ResponseEntity.created(new URI("/categories/save/")).body(categoryService.saveCategory(categoryDto));
     }
 
     @PostMapping("/saves")
-    public ResponseEntity<List<CategoryDto>> saveCategories (@RequestBody List<CategoryDto> categoryDtos) throws URISyntaxException {
+    public ResponseEntity<List<CategoryDto>> saveCategories (@RequestBody @Valid List<CategoryDto> categoryDtos) throws URISyntaxException {
         return ResponseEntity.created(new URI("/categories/saves/")).body(categoryService.saveCategories(categoryDtos));
     }
 

@@ -4,6 +4,7 @@ import com.spring.boot.dto.CategoryDto;
 import com.spring.boot.model.Category;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CategoryService {
 
@@ -18,6 +19,10 @@ public interface CategoryService {
    CategoryDto updateCategory(CategoryDto categoryDto);
 
    List<CategoryDto> updateCategories(List<CategoryDto> categoryDtos);
+
+   Category findByName(String name);
+
+   Optional<Category> findById(Long id);
 
 
    void deleteCategory(Long id);

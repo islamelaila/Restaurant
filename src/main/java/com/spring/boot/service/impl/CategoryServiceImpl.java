@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -79,6 +80,16 @@ public class CategoryServiceImpl implements CategoryService {
 
         List<Category> categories = categoryRepo.saveAll(categoryMapper.toEntityList(categoryDtos));
         return categoryMapper.toDTOList(categories);
+    }
+
+    @Override
+    public Category findByName(String name) {
+        return categoryRepo.findByName(name).get();
+    }
+
+    @Override
+    public Optional<Category> findById(Long id) {
+        return categoryRepo.findById(id);
     }
 
     @Override
