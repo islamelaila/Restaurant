@@ -111,4 +111,13 @@ public class ProductServiceImpl implements ProductService {
         productRepo.deleteAllById(ids);
     }
 
+    @Override
+    public List<ProductDto> getAllProducts() {
+        List<Product> products = productRepo.findAll();
+        if (products.isEmpty()) {
+            throw new RuntimeException("No.products.found");
+        }
+        return productMapper.toDTOList(products);
+    }
+
 }

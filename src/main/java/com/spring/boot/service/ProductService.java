@@ -22,4 +22,7 @@ public interface ProductService {
     void deleteProducts(List<Long> ids);
 
 
+    List<ProductDto> getAllProducts();
+
+
 }

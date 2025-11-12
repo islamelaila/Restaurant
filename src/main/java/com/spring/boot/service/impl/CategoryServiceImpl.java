@@ -29,6 +29,9 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryDto> getAllCategories() {
         List<Category> categories = categoryRepo.findAll();
+        if (categories.isEmpty()){
+            throw new RuntimeException("No.categories.found");
+        }
         return categories.stream().map(category -> categoryMapper.toDTO(category)).collect(Collectors.toList());
     }
 
