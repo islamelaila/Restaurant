@@ -1,4 +1,4 @@
-package com.spring.boot.service.impl;
+package com.spring.boot.service.bundle;
 import com.spring.boot.helper.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;

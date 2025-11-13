@@ -1,6 +1,6 @@
 package com.spring.boot.config;
 import com.spring.boot.helper.MessageResponse;
-import com.spring.boot.service.impl.BundelMessageService;
+import com.spring.boot.service.bundle.BundelMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
