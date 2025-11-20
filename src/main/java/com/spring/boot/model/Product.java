@@ -20,6 +20,7 @@ public class Product {
 
     private String name;
 
+    @Column(name = "IMAGE_PATH")
     private String imagePath;
 
     @Column(length = 1000)

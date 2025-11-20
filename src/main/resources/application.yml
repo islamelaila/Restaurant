@@ -14,6 +14,6 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-#token:
-#  secret: idijcjkdkm8748987@#$%^&4568,GTYIUOUyqwqqcnmxzcnx777*&&$##@
-#  time: 24h
+token:
+  secret: idijcjkdkm8748987@#$%^&4568,kodoekdooekdek0AAQKOQ*&&$##@
+  time: 24h
