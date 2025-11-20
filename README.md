@@ -18,7 +18,7 @@ The project includes role-based access control, JWT-secured authentication, prod
   - CRUD operations, linked with categories
 - 📄 **DTO + Mapping using MapStruct**
 - 🌐 **RESTful APIs** with Spring Boot
-- 🗄️ **MySQL / H2 Database**
+- 🗄️ **ORCALE / H2 Database**
 - 👨‍💻 **Angular Frontend** (in progress)
 
 ---
@@ -29,7 +29,7 @@ The project includes role-based access control, JWT-secured authentication, prod
 |--------------|-----------------------------------|
 | Backend      | Spring Boot, Spring Security, JWT |
 | Frontend     | Angular                          |
-| Database     | MySQL / H2                       |
+| Database     | ORCALE / H2                       |
 | Mapping      | MapStruct                        |
 | Dependencies | Lombok, JPA                      |
 
@@ -65,7 +65,7 @@ src/
 
 2. Open in your IDE (e.g., IntelliJ IDEA)
 
-3. Create the database (if using MySQL)
+3. Create the database (if using ORCALE)
 
 4. Configure database settings in `application.properties`
 
