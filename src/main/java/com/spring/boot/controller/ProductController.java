@@ -2,6 +2,7 @@ package com.spring.boot.controller;
 import com.spring.boot.dto.ProductDto;
 import com.spring.boot.model.Product;
 import com.spring.boot.service.ProductService;
+import com.spring.boot.vm.ProductResponseVm;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/product")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProductController {
 
     private ProductService productService;
@@ -70,8 +72,23 @@ public class ProductController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<List<ProductDto>> getAllProducts() {
-        return ResponseEntity.ok(productService.getAllProducts());
+    public ResponseEntity<ProductResponseVm> getAllProducts(@RequestParam Integer pageNumber, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(productService.getAllProducts(pageNumber , pageSize));
     }
 
+    @GetMapping("/getProductsByCategoryId")
+    public ResponseEntity<ProductResponseVm> getProductsByCategoryId(@RequestParam Long categoryId , @RequestParam Integer pageNumber, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(productService.getProductsByCategoryId(categoryId , pageNumber, pageSize));
+    }
+
+
+    @GetMapping("/getProductsByCategoryName/{categoryName}")
+    public ResponseEntity<List<ProductDto> > getProductsByCategoryName(@PathVariable String categoryName) {
+        return ResponseEntity.ok(productService.getProductsByCategoryName(categoryName));
+    }
+
+    @GetMapping("/SearchProductByName")
+    public ResponseEntity<ProductResponseVm> searchProductByName(@RequestParam String productName , @RequestParam Integer pageNumber, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(productService.searchProductByName(productName , pageNumber, pageSize));
+    }
 }

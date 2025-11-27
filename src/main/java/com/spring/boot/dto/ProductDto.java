@@ -1,6 +1,7 @@
 package com.spring.boot.dto;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.spring.boot.model.Category;
 import jakarta.persistence.*;

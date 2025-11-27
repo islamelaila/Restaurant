@@ -30,7 +30,7 @@ public class SecurityConfig {
         http.sessionManagement(sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.authorizeHttpRequests(requests -> requests
-                .requestMatchers("/users/**").permitAll()
+                .requestMatchers("/auth/**").permitAll()
                 .anyRequest().authenticated());
 
         http.addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
@@ -38,6 +38,8 @@ public class SecurityConfig {
 //        http.authorizeHttpRequests(requests -> requests.anyRequest().authenticated());
 
         http.csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable());
+
+        http.cors(Customizer.withDefaults());
 
         http.formLogin(AbstractHttpConfigurer::disable);
         http.httpBasic(Customizer.withDefaults());
@@ -54,6 +56,19 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+
+//    @Bean
+//    public CorsConfigurationSource corsConfigurationSource() {
+//        CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowCredentials(true);
+//        config.addAllowedOrigin("http://localhost:4200"); // Angular URL
+//        config.addAllowedHeader("*");
+//        config.addAllowedMethod("*");
+//
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", config);
+//        return source;
+//    }
 
 
 }

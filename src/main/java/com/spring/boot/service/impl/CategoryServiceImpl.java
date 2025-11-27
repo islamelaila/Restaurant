@@ -37,7 +37,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public CategoryDto getCategoryById(Long id) {
-        Category category = categoryRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Category with id " + id + " not found"));
+        Category category = categoryRepo.findById(id).orElseThrow(() -> new RuntimeException("Category.with.this.id.not.found"));
         return categoryMapper.toDTO(category);
     }
 
@@ -51,7 +51,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<CategoryDto> saveCategories(List<CategoryDto> categoryDtos) {
         if (categoryDtos == null || categoryDtos.isEmpty()) {
-            throw new IllegalArgumentException("Category list cannot be null or empty");
+            throw new RuntimeException("Category.list.cannot.be.null.or.empty");
         }
         try {
             List<Category> categories = categoryMapper.toEntityList(categoryDtos);
@@ -106,7 +106,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void deleteCategories(List<Long> ids) {
         if (ids == null || ids.isEmpty()) {
-            throw new IllegalArgumentException("IDs list cannot be empty");
+            throw new IllegalArgumentException("IDs.list.cannot.be.empty");
         }
 
         categoryRepo.deleteAllById(ids);

@@ -1,8 +1,8 @@
 package com.spring.boot.controller;
 import com.spring.boot.dto.UsersDto;
 import com.spring.boot.service.UsersService;
-import com.spring.boot.vm.LoginRequestVM;
-import com.spring.boot.vm.LoginResponseVM;
+import com.spring.boot.vm.LoginRequestVm;
+import com.spring.boot.vm.LoginResponseVm;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,8 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/auth")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UsersController {
 
     private UsersService usersService;
@@ -30,13 +31,13 @@ public class UsersController {
 
 
     @PostMapping("/signup")
-    public ResponseEntity<UsersDto> saveUser(@RequestBody UsersDto usersDto) throws URISyntaxException {
-        return ResponseEntity.created(new URI("/users/create/")).body(usersService.signUp(usersDto));
+    public ResponseEntity<UsersDto> signUp(@RequestBody UsersDto usersDto) throws URISyntaxException {
+        return ResponseEntity.created(new URI("/auth/signup/")).body(usersService.signUp(usersDto));
     }
 
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseVM> login(@RequestBody @Valid LoginRequestVM loginRequestVM) {
+    public ResponseEntity<LoginResponseVm> login(@RequestBody @Valid LoginRequestVm loginRequestVM) {
         return ResponseEntity.ok(usersService.login(loginRequestVM));
     }
 

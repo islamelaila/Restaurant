@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class LoginResponseVM {
+public class LoginResponseVm {
     String token;
 
 }

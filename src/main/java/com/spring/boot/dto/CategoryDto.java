@@ -1,4 +1,5 @@
 package com.spring.boot.dto;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.spring.boot.model.Product;
 import jakarta.validation.constraints.NotBlank;
@@ -25,6 +26,7 @@ public class CategoryDto {
     private String logo ;
 
     private String flag ;
+
     private List<Product> products;
 
 

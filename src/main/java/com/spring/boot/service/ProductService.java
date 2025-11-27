@@ -1,6 +1,7 @@
 package com.spring.boot.service;
 import com.spring.boot.dto.ProductDto;
 import com.spring.boot.model.Product;
+import com.spring.boot.vm.ProductResponseVm;
 
 import java.util.List;
 
@@ -22,7 +23,16 @@ public interface ProductService {
     void deleteProducts(List<Long> ids);
 
 
-    List<ProductDto> getAllProducts();
+    ProductResponseVm getAllProducts(Integer pageNumber, Integer pageSize);
+
+
+    ProductResponseVm getProductsByCategoryId(Long categoryId ,Integer pageNumber, Integer pageSize);
+
+    ProductResponseVm searchProductByName(String productName,Integer pageNumber, Integer pageSize );
+
+
+    List<ProductDto> getProductsByCategoryName(String categoryName);
+
 
 
 }

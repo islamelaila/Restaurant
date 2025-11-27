@@ -1,7 +1,7 @@
 package com.spring.boot.service;
 import com.spring.boot.dto.UsersDto;
-import com.spring.boot.vm.LoginRequestVM;
-import com.spring.boot.vm.LoginResponseVM;
+import com.spring.boot.vm.LoginRequestVm;
+import com.spring.boot.vm.LoginResponseVm;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ public interface UsersService {
 
     UsersDto signUp(UsersDto usersDto);
 
-    LoginResponseVM login (LoginRequestVM loginRequestVM) ;
+    LoginResponseVm login (LoginRequestVm loginRequestVM) ;
 
      UsersDto getUserByUsername (String username) ;
 

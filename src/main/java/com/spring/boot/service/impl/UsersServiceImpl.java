@@ -9,8 +9,8 @@ import com.spring.boot.model.Users;
 import com.spring.boot.repo.UsersRepo;
 import com.spring.boot.service.RoleService;
 import com.spring.boot.service.UsersService;
-import com.spring.boot.vm.LoginRequestVM;
-import com.spring.boot.vm.LoginResponseVM;
+import com.spring.boot.vm.LoginRequestVm;
+import com.spring.boot.vm.LoginResponseVm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -59,6 +59,10 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UsersDto signUp(UsersDto usersDto) {
+        Users userExists = usersRepo.findByUsername(usersDto.getUsername()).orElse(null);
+        if (userExists != null) {
+            throw new RuntimeException("Username.already.exists");
+        }
         Users user = usersMapper.toEntity(usersDto);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         RoleDto roleDto = roleService.findByCode(Roles.USER.toString());
@@ -68,17 +72,17 @@ public class UsersServiceImpl implements UsersService {
     }
 
     @Override
-    public LoginResponseVM login(LoginRequestVM loginRequestVM) {
+    public LoginResponseVm login(LoginRequestVm loginRequestVM) {
         Users user = usersRepo.findByUsername(loginRequestVM.getUsername())
-                .orElseThrow(() -> new RuntimeException("Invalid username or password"));
+                .orElseThrow(() -> new RuntimeException("Invalid.username.or.password"));
 
         if (!passwordEncoder.matches(loginRequestVM.getPassword(), user.getPassword())) {
-            throw new RuntimeException("Invalid username or password");
+            throw new RuntimeException("Invalid.username.or.password");
         }
 
         UsersDto usersDto = usersMapper.toDto(user);
         String token = tokenHandler.CreateToken(usersDto);
-        return new LoginResponseVM(token);
+        return new LoginResponseVm(token);
     }
 
 
