@@ -1,80 +1,173 @@
-# 🍽️ Restaurant Management System (Spring Boot + Angular)
+🍽️ Restaurant Management System (RMS)
+Motivation 🌟
 
-## 🏗️ Full-Stack Architecture
+The Power of Technology: Simplifying Restaurant Operations & Enhancing User Experience
 
-![Architecture Diagram](architecture.png)
+Running a restaurant involves countless small tasks—from organizing categories and managing products to ensuring smooth operations for staff and customers. Here comes the power of technology. 🚀
 
-## 🎯 Overview
+This project aims to modernize restaurant management by providing a clean, efficient, and scalable digital system.
+By using interactive dashboards and structured API operations, restaurant owners can visualize, control, and optimize their workflow.
 
-A complete **Restaurant Management System** built using **Spring Boot**
-for the backend and **Angular** for the frontend.\
-Includes JWT authentication, role-based access, product/category
-management, and modular clean architecture.
+Just like imagination fuels innovation, structured software helps businesses grow, automate, and succeed.
+This project represents that bridge between simplicity and efficiency — the foundation that motivated us to build this Restaurant Management System. 🍽️💡
 
-## 🚀 Features
+Objective 🎯
 
--   🔐 **JWT Authentication** (Login + Register)
--   👥 **Role-Based Authorization** (Admin / Manager / Customer)
--   🍽️ **Category Management**
--   🛒 **Product Management**
--   📦 **DTO + MapStruct Mapping**
--   🌐 **REST APIs**
--   🗄️ **Oracle / H2 DB Support**
--   🎨 **Angular Frontend**
--   🐳 **Docker (coming soon)**
+The Restaurant Management System (RMS) is designed to deliver a powerful, modular, and user-friendly environment for handling restaurants digitally.
+The system focuses on:
 
-## 📂 Backend Structure
+Simplifying product & category management
 
-    src/main/java/com/restaurant/
-     ├─ controller/
-     ├─ service/
-     │   └─ impl/
-     ├─ repository/
-     ├─ dto/
-     ├─ mapper/
-     ├─ model/
-     └─ security/
-          ├─ JWTFilter
-          ├─ JWTUtil
-          └─ SecurityConfig
+Providing secure role-based access
 
-## 📂 Frontend Structure (Angular)
+Offering a fast and interactive Angular UI
 
-    src/app/
-     ├─ services/
-     ├─ components/
-     │   ├─ products/
-     │   └─ categories/
-     ├─ guards/
-     ├─ models/
-     └─ pages/
+Delivering scalable, maintainable Spring Boot backend services
 
-## 🔧 Run Backend
+Preparing the system for future modules like orders, invoices, staff management, and reports
 
-    mvn spring-boot:run
+Our goal is to build a complete full-stack solution that is clean, efficient, and production-ready. 🚀✨
 
-## 🔧 Run Frontend
 
-    npm install
-    ng serve -o
+🚀 Features
+Backend
 
-## 🔐 Authentication Flow
+🔐 JWT Authentication
 
-1.  User logs in → receives JWT\
-2.  Angular stores token (localStorage)\
-3.  Each API call includes:
+Login, register, secure endpoints
 
-```{=html}
-<!-- -->
-```
-    Authorization: Bearer <token>
+Role-based access control (Admin, Manager, Customer)
 
-## 📝 Future Work
+🍽️ Category Management
 
--   Orders Module\
--   Invoice Module\
--   Docker Deployment
+Add, update, list categories
 
-------------------------------------------------------------------------
+🛒 Product Management
 
-Built with ❤️ by **Islam El‑alia**
+CRUD operations linked with categories
+
+📄 DTO + Mapping using MapStruct
+
+🌐 RESTful APIs with Spring Boot
+
+Frontend (Angular)
+
+👨‍💻 Dynamic interface (in progress)
+
+Display product cards with images (future)
+
+Integration with backend APIs
+
+Future Features
+
+Order & Invoice module
+
+Docker setup for easy deployment
+
+🛠️ Tech Stack
+Layer	Technology
+Backend	Spring Boot, Spring Security, JWT
+Frontend	Angular
+Database	Oracle / H2
+Mapping	MapStruct
+Dependencies	Lombok, JPA
+📂 Folder Structure
+Backend
+restaurant-backend/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/com/restaurant/
+│   │   │   ├── controller/         # REST controllers (Product, Category, Auth)
+│   │   │   ├── service/            # Service interfaces
+│   │   │   ├── service/impl/       # Service implementations
+│   │   │   ├── repository/         # JPA repositories
+│   │   │   ├── model/              # Entities: Product, Category, User
+│   │   │   ├── dto/                # DTOs for API requests/responses
+│   │   │   ├── mapper/             # MapStruct mappers
+│   │   │   └── security/           # JWTFilter, JWTUtil, SecurityConfig
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── data.sql            # Optional initial data
+│   └── test/
+│       └── java/com/restaurant/    # Unit tests for services and controllers
+│
+├── pom.xml
+└── README.md
+
+Frontend
+restaurant-frontend/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── product/
+│   │   │   │   ├── product-list/
+│   │   │   │   ├── product-card/   # Future: display product with image
+│   │   │   │   └── product-form/
+│   │   │   ├── category/
+│   │   │   │   ├── category-list/
+│   │   │   │   └── category-form/
+│   │   │   └── shared/             # Shared UI components
+│   │   ├── services/                # API service calls
+│   │   ├── models/                  # TypeScript interfaces
+│   │   └── app.module.ts
+│   └── assets/                      # Images, styles, icons
+│
+├── angular.json
+├── package.json
+└── README.md
+
+🔧 How to Run
+Backend
+git clone https://github.com/islamelaila/Restaurant.git
+cd Restaurant
+mvn spring-boot:run
+
+
+Configure application.properties for your database (Oracle or H2).
+
+Backend runs on default port 8080.
+
+Frontend
+
+Navigate to restaurant-frontend
+
+Install dependencies:
+
+npm install
+
+
+Run Angular app:
+
+ng serve
+
+
+Open in browser: http://localhost:4200
+
+🔐 Authentication (JWT)
+
+Send email + password to /auth/login
+
+Receive JWT token
+
+Include token in headers for protected endpoints:
+
+Authorization: Bearer <token>
+
+Demo 🎬
+Frontend
+
+Product Operations
+
+Category Operations
+
+Note: Replace the GIF placeholders with actual screen recordings from your Angular app.
+
+💡 Contribution
+
+Fork the repo, make your changes, and create a pull request.
+Suggestions and improvements are welcome!
+
+📧 Contact
+Developed with by Islam El-alia
