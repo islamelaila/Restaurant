@@ -1,0 +1,24 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form action="#" method="POST">
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter username" required #username>
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required #password>
+    </div>
+
+    <div class="message-box" *ngIf="message_AR || message_EN || message_FR">
+      <p class="msg-ar">{{ message_AR }}</p>
+      <p class="msg-en">{{ message_EN }}</p>
+      <p class="msg-fr">{{ message_FR }}</p>
+    </div>
+
+    <button type="submit" class="login-button" (click)="login(username.value ,password.value)">Login</button>
+  </form>
+  <div class="login-footer">
+    <p>Don't have an account? <a routerLink="/singup">Register</a></p>
+  </div>
+</div>

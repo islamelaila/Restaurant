@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.login-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  margin: auto;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #6a11cb;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #2575fc;
+}
+
+.login-footer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #777;
+}
+
+.login-footer a {
+  color: #6a11cb;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+
+.message-box {
+  margin-top: 15px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  background-color: #ffe5e5;
+  border: 1px solid #ff7b7b;
+  text-align: left;
+  animation: fadeIn 0.3s ease;
+}
+
+.message-box .msg-ar {
+  color: #c62828;
+  font-weight: bold;
+  margin: 0;
+}
+
+.message-box .msg-en {
+  color: #b71c1c;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.message-box .msg-fr {
+  color: #b71c1c;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
