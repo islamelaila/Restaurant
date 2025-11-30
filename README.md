@@ -150,7 +150,6 @@ Authorization: Bearer <token>
 - Product Operations
 - Category Operations
 
-> Note: Replace GIF placeholders with actual screen recordings from your Angular app.
 
 ---
 
