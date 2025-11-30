@@ -1,12 +1,10 @@
 package com.spring.boot.model;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.util.List;
 
 @Getter
@@ -31,4 +29,15 @@ public class Users {
     @ManyToMany(fetch = FetchType.EAGER)
     @JsonIgnoreProperties("users")
     private List<Role> roles;
+
+
+    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("users")
+    private UserDetails userDetails;
+
+
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("users")
+    private List<ContactInfo> contactInfos;
+
 }

@@ -1,5 +1,7 @@
 package com.spring.boot.dto;
+import com.spring.boot.model.ContactInfo;
 import com.spring.boot.model.Role;
+import com.spring.boot.model.UserDetails;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,4 +22,10 @@ public class UsersDto {
     private String password ;
 
     private List<Role> roles;
+
+    private UserDetails userDetails;
+
+
+    private List<ContactInfo> contactInfos;
+
 }
