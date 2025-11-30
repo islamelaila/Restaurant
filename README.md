@@ -32,7 +32,7 @@ Our goal is to build a complete full-stack solution that is clean, efficient, an
 ### Backend
 - 🔐 **JWT Authentication**: Login, register, secure endpoints
 - **Role-based access control**: Admin, Manager, Customer
-- 🍽️ **Category Management**: Add, update, list categories
+- 🍽️ **Category Management**: Add, update, list categories , add paganation 
 - 🛒 **Product Management**: CRUD operations linked with categories
 - 📄 **DTO + Mapping**: Using MapStruct
 - 🌐 **RESTful APIs**: Built with Spring Boot
@@ -145,10 +145,21 @@ Authorization: Bearer <token>
 
 ---
 
-## 🎬 Demo
-- Frontend
-- Product Operations
-- Category Operations
+## 🎬
+
+<img width="1648" height="916" alt="image" src="https://github.com/user-attachments/assets/5dacd512-9ce3-404f-a898-8a8778b1e9b4" />
+
+<img width="1643" height="988" alt="image" src="https://github.com/user-attachments/assets/845aa88d-e228-4ef8-b75e-7645a62fa6d9" />
+
+<img width="1802" height="996" alt="image" src="https://github.com/user-attachments/assets/dcf81790-1e8c-4a46-8fec-7771a7026036" />
+
+<img width="1804" height="981" alt="image" src="https://github.com/user-attachments/assets/ce9db433-f365-47ff-bc8a-3af430d40045" />
+
+<img width="1649" height="997" alt="image" src="https://github.com/user-attachments/assets/f85edf9d-2778-49eb-86b0-b146b30a327a" />
+
+<img width="1651" height="996" alt="image" src="https://github.com/user-attachments/assets/1050273a-091c-46c7-8e44-bbd37583dc3e" />
+
+<img width="1467" height="965" alt="image" src="https://github.com/user-attachments/assets/9484b6c9-24dc-4d81-b4ed-a5890091d49a" />
 
 
 ---
