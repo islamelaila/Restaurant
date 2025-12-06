@@ -1,0 +1,34 @@
+.img{
+  width: 160px !important;
+}
+
+.orderName {
+  width: 160px !important;
+  font-weight: bold;
+}
+
+
+body, html {
+  height: 100%;
+  background-color: #f8f9fa;
+}
+.no-orders-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.no-orders-container img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+.no-orders-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.no-orders-container p {
+  color: #6c757d;
+  margin-bottom: 20px;
+}

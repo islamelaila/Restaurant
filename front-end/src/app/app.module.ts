@@ -11,14 +11,15 @@ import {FooterComponent} from './componants/footer/footer.component';
 import { ChefsComponent } from './componants/chefs/chefs.component';
 import { ContactInfoComponent } from './componants/contact-info/contact-info.component';
 import {APP_BASE_HREF} from '@angular/common';
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './componants/login/login.component';
 import { SingupComponent } from './componants/singup/singup.component';
 import { FormsModule } from '@angular/forms';
-import {AuthGuard} from "../service/guard/auth.guard";
-import {LoginSignUpGuard} from "../service/guard/login-sign-up.guard";
-import {AuthTokenInterceptor} from "../service/interseptor/auth-token.interceptor";
-import {NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
+import {AuthGuard} from '../service/guard/auth.guard';
+import {LoginSignUpGuard} from '../service/guard/login-sign-up.guard';
+import {AuthTokenInterceptor} from '../service/interseptor/auth-token.interceptor';
+import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import { OrderResComponent } from './componants/order-res/order-res.component';
 
 // http://localhost:4200
 export const routes: Routes = [
@@ -28,10 +29,12 @@ export const routes: Routes = [
   {path: 'cardDetails', component: CardDetailsComponent , canActivate: [AuthGuard] },
   {path: 'contact-info', component: ContactInfoComponent , canActivate: [AuthGuard]},
   {path: 'chefs', component: ChefsComponent , canActivate: [AuthGuard]},
-  {path: 'category/:id', component:ProductsComponent , canActivate: [AuthGuard] },
-  {path: 'search/:key', component:ProductsComponent , canActivate: [AuthGuard] },
-  {path: 'login', component:LoginComponent , canActivate: [LoginSignUpGuard] },
-  {path: 'singup', component:SingupComponent, canActivate: [LoginSignUpGuard] },
+  {path: 'category/:id', component: ProductsComponent , canActivate: [AuthGuard] },
+  {path: 'search/:key', component: ProductsComponent , canActivate: [AuthGuard] },
+  {path: 'login', component: LoginComponent , canActivate: [LoginSignUpGuard] },
+  {path: 'singup', component: SingupComponent, canActivate: [LoginSignUpGuard] },
+  {path: 'order-res/code/:code/size/:size/price/:price', component: OrderResComponent, canActivate: [AuthGuard] },
+
 
 
   // http://localhost:4200/
@@ -58,7 +61,8 @@ export const routes: Routes = [
     ChefsComponent,
     ContactInfoComponent,
     LoginComponent,
-    SingupComponent
+    SingupComponent,
+    OrderResComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

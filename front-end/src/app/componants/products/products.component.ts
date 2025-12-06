@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from '../../../model/product';
 import {ProductService} from '../../../service/product.service';
 import {ActivatedRoute} from '@angular/router';
+import {CartOrder} from "../../../model/cart-order";
+import {CartService} from "../../../service/cart.service";
 
 @Component({
   selector: 'app-products',
@@ -15,12 +17,12 @@ export class ProductsComponent implements OnInit {
   collectionSize: number;
   message_AR = '' ;
   message_EN = '' ;
-  message_FR ='' ;
+  message_FR = '' ;
 
 
    products: Product[] = [] ;
 
-  constructor(private productService: ProductService , private activatedRoute: ActivatedRoute) { }
+  constructor(private productService: ProductService , private activatedRoute: ActivatedRoute , private cartService: CartService ) { }
     ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(() => this.getAllProducts()
     );
@@ -99,5 +101,10 @@ export class ProductsComponent implements OnInit {
   changeSize(event: Event){
     this.pageLength = +(event.target as HTMLInputElement).value ;
     this.getAllProducts();
+  }
+
+  addProductToCart(product: Product){
+    let cartOrder = new CartOrder(product);
+    this.cartService.addOrder(cartOrder);
   }
 }

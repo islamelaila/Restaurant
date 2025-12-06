@@ -34,5 +34,8 @@ public interface ProductService {
     List<ProductDto> getProductsByCategoryName(String categoryName);
 
 
+    List<ProductDto> getProductsByIds(List<Long> ids);
+
+
 
 }

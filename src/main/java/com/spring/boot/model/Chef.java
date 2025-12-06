@@ -36,7 +36,7 @@ public class Chef {
     private String facebookLink;
 
     @URL(message = "Twitter link must be a valid URL")
-    private String tweitterLink;
+    private String twitterLink;
 
     @URL(message = "Instagram link must be a valid URL")
     private String instagramLink;

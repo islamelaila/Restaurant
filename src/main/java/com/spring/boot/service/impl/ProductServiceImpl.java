@@ -154,6 +154,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<ProductDto> getProductsByIds(List<Long> ids) {
+        return productMapper.toDTOList(productRepo.findAllById(ids));
+    }
+
+    @Override
     public ProductResponseVm searchProductByName(String productName , Integer pageNumber, Integer pageSize) {
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
         Page<Product> products = productRepo.findAllByNameContainingIgnoreCase(productName , pageable);

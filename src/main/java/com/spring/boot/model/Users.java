@@ -40,4 +40,8 @@ public class Users {
     @JsonIgnoreProperties("users")
     private List<ContactInfo> contactInfos;
 
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> orders;
+
 }

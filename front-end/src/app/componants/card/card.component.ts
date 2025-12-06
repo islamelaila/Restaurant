@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Routes} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {CartService} from '../../../service/cart.service';
 
 @Component({
   selector: 'app-card',
@@ -7,6 +7,31 @@ import {Routes} from "@angular/router";
   styleUrls: ['./card.component.css']
 })
 
-export class CardComponent {
+export class CardComponent implements OnInit {
+
+  totalPrice: number = 0;
+  totalNumber: number = 0;
+
+
+  ngOnInit(): void {
+    this.getTotal();
+  }
+
+  constructor(public cartService : CartService) {
+  }
+
+  getTotal() {
+    this.cartService.totalPrice.subscribe((total) => {
+      this.totalPrice = total;
+    });
+
+    this.cartService.totalNumber.subscribe((total) => {
+      this.totalNumber = total;
+    });
+  }
+
+
 
 }
+
+
