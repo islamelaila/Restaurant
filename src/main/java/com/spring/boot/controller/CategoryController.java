@@ -144,9 +144,7 @@ public class CategoryController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Categories updated successfully")
     })
-    public ResponseEntity<List<CategoryDto>> updateCategories(
-            @RequestBody List<CategoryDto> categoryDtos
-    ) {
+    public ResponseEntity<List<CategoryDto>> updateCategories(@RequestBody List<CategoryDto> categoryDtos) {
         return ResponseEntity.ok(categoryService.updateCategories(categoryDtos));
     }
 

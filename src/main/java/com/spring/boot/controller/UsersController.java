@@ -70,12 +70,8 @@ public class UsersController {
             ),
             @ApiResponse(responseCode = "400", description = "Invalid registration data")
     })
-    public ResponseEntity<UsersDto> signUp(
-            @RequestBody @Valid UsersDto usersDto
-    ) throws URISyntaxException {
-        return ResponseEntity
-                .created(new URI("/auth/signup"))
-                .body(usersService.signUp(usersDto));
+    public ResponseEntity<UsersDto> signUp( @RequestBody @Valid UsersDto usersDto) throws URISyntaxException {
+        return ResponseEntity.created(new URI("/auth/signup")).body(usersService.signUp(usersDto));
     }
 
     @PostMapping("/login")

@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "category")
-public class Category {
+public class Category extends BaseEntity {
 
 
     @Id

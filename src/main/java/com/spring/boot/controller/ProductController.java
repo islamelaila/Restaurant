@@ -191,13 +191,8 @@ public class ProductController {
                     content = @Content(schema = @Schema(implementation = MessageResponse.class))
             )
     })
-    public ResponseEntity<ProductResponseVm> getAllProducts(
-            @RequestParam Integer pageNumber,
-            @RequestParam Integer pageSize
-    ) {
-        return ResponseEntity.ok(
-                productService.getAllProducts(pageNumber, pageSize)
-        );
+    public ResponseEntity<ProductResponseVm> getAllProducts(@RequestParam Integer pageNumber, @RequestParam Integer pageSize) {
+        return ResponseEntity.ok(productService.getAllProducts(pageNumber, pageSize));
     }
 
     @GetMapping("/getProductsByCategoryId")
@@ -233,13 +228,8 @@ public class ProductController {
             summary = "Search product by name",
             description = "Search products by name with pagination"
     )
-    public ResponseEntity<ProductResponseVm> searchProductByName(
-            @RequestParam String productName,
-            @RequestParam Integer pageNumber,
-            @RequestParam Integer pageSize
-    ) {
-        return ResponseEntity.ok(
-                productService.searchProductByName(productName, pageNumber, pageSize)
+    public ResponseEntity<ProductResponseVm> searchProductByName( @RequestParam String productName, @RequestParam Integer pageNumber, @RequestParam Integer pageSize ) {
+        return ResponseEntity.ok(productService.searchProductByName(productName, pageNumber, pageSize)
         );
     }
 }
